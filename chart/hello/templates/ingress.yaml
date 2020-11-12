@@ -25,6 +25,7 @@ spec:
               serviceName: {{ $serviceName }}
               servicePort: {{ $servicePort }}
     {{- end }}
+  {{- if .Values.ingress.tls }}
   tls:
   {{- range $tls := .Values.ingress.tls }}
   - secretName: {{ $tls.secretName }}
@@ -32,5 +33,6 @@ spec:
     {{- range $tlsHost := $tls.hosts }}
     - {{ $tlsHost }}
     {{- end -}}
+  {{- end -}}
   {{- end -}}
 {{- end -}}

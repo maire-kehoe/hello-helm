@@ -19,8 +19,6 @@ service_cluster_ip:
   externalPort: 80
   internalPort: 8080
 ingress:
-  # used in the deploy script:
-  detectClusterIngressEnabled: true
   # may be automatically set to true when detect cluster ingress
   enabled: false
   # Used to create an Ingress record.
